@@ -1,0 +1,213 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;400;500;600;700&display=swap');
+
+/* CSS Reset */
+
+html, body, div , span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video{margin: 0; padding: 0; border: 0; font-size: 100%}
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section{display: block}
+html{scroll-behavior: smooth}
+body{font-family: 'Noto Sans KR', sans-serif; font-size: 18px;color: #333}
+ol, ul{list-style: none}
+table{border-collapse: collapse; border-spacing: 0}
+address{font-style: normal}
+a{color: #333; text-decoration: none}
+img{border: 0; vertical-align: top}
+.hidden{display: block;position: absolute;left: -1000px;width: 1px;height: 1px;overflow: hidden;color:#fff}
+#skipNav{position:relative;width: 100%;overflow: hidden;z-index: 60}
+#skipNav a{display: block;height:1px;margin-bottom: -1px;font-size: 1.2em;
+           color: #fff;overflow: hidden;text-align: center}
+#skipNav a:hover, #skipNav a:focus, #skipNav a:active{height: auto;padding:10px 0;background: #6D8B74}           
+.wrap{overflow: hidden} 
+
+/* font-family: 'Noto Sans KR', sans-serif; */
+/* font-family: 'Noto Serif KR', serif; */
+
+.info{background: linear-gradient(10deg, rgb(52, 59, 48) 0%, rgb(37, 42, 34) 100%);color:#fff;position:relative;padding:3% 23%;overflow: hidden;height:250px;border-bottom: 15px solid #6D8B74}
+.info .myphoto{border-radius: 20px;overflow: hidden;box-shadow: 5px 5px 15px 3px rgba(0,0,0,.2);width:18%;float: left}
+.info .myphoto img{object-fit: contain;width:100%;height:100%}
+.info .infoBox{overflow: hidden;float: left;width:80%}
+.info .myname{padding:3% 0}
+.info .myname strong{letter-spacing:20px;font-size: 2em;font-weight: 500;text-align: center;display: block;width:160px;margin: 0 auto;padding-left: 10px}
+.info .myname .nameBox{display: flex;justify-content:center;color:#D0C9C0;font-weight: 400}
+.info .myname span{font-weight: 300;font-size: .9em;color:#ccc;text-align: center;margin:1% 2%}
+.info .myname span:last-child{padding-right:4.3%}
+
+.info .txtBox{display: flex;justify-content: center;padding:2% 3%;background: #3f5243;margin: 0 auto;width:85%;font-size: .9em;border-radius: 10px}
+.info .txtBox dl{border-right: 2px solid #6D8B74;padding:0 4%}
+.info .txtBox dl:nth-child(1){width:35%}
+.info .txtBox dl:nth-child(2){width:20%}
+.info .txtBox dl:last-child{width:35%;border: none}
+.info .txtBox dt{font-size: .8em;font-weight: 300;color:ccc;color:#83a58b}
+.info .txtBox dd{font-weight: 300;font-size: .9em}
+
+.content{padding:3% 15%}
+.content section{margin: 50px 0}
+.content .question .hgroup{padding:1% 2%;margin-bottom: 2%}
+.content .question .hgroup .all{float: right;background: #6D8B74;margin-left: 3%;width:38px;height:38px;border: 2px solid #6D8B74;transition: all .5s ease-out;
+                                text-align: center;line-height: 36px;color:#fff;border-radius: 10px;box-shadow: 3px 5px 8px rgba(0,0,0,.2)}
+.content .question .hgroup .all:hover{background: #EFEAD8;color:#6D8B74}
+.content .question .hgroup div{background: rgba(109, 139, 116,.1);width:35%;padding:5px 20px;border-radius: 10px;box-shadow: inset 3px 5px 10px rgba(0,0,0,.1);display: flex;justify-content: space-around}
+.content .question .hgroup div span{font-size: .8em;padding:3px 0}
+
+.content .question ul li .q{display: flex;justify-content: space-between;border-radius: 10px;margin: 2% 0;padding-right: 2%;background:#D0C9C0}
+.content .question ul li .q a{width:100%;padding:1% 2%;font-weight: 500}
+.content .question ul li .q span{padding:1% 0}
+.content .question ul li .a{padding: 0 1% 30px}
+
+.content .question .q:hover, .content .question .q:active,.content .question .q:focus{background:#EFEAD8}
+.content .question .article.show .q{background: #EFEAD8;box-shadow: inset 3px 5px 8px rgba(0,0,0,.05)}
+.content .question .article.hide .q{background: #D0C9C0}
+
+.content .question ul li .a li{display: flex;justify-content: space-between;margin:10px 0;font-size: .8em;border-bottom: 1px solid #eee;padding-bottom: 8px}
+.content .question ul li .a li:nth-child(1){border-bottom: 1px solid #ccc;padding-bottom: 8px;margin: none;font-size: .85em}
+.content .question ul li .a li:last-child{border: none}
+
+
+
+.content .question ul li .a.education li strong,.content .question ul li .a li p{width:25%;text-align: center}
+.content .question ul li .a.experience li dl,.content .question ul li .a.education2 li dl{padding: 0 3%}
+.content .question ul li .a.experience li dt,.content .question ul li .a.education2 li dt{font-size: .9em;margin-bottom: 5px}
+.content .question ul li .a.experience li dd,.content .question ul li .a.education2 li dd{font-size: 1em;color:#6D8B74;font-weight: 500}
+.content .question ul li .a.experience li dd>span span,.content .question ul li .a.education2 li dd>span span{text-decoration: underline}
+.content .question ul li .a.experience li dd>span,.content .question ul li .a.education2 li dd>span{display: block;font-size: .8em;font-weight: 400;color:#333}
+
+.content .question ul li .a.skill li,.content .question ul li .a.portfolio li{display: block}
+.content .question ul li .a.skill li dl,.content .question ul li .a.portfolio li dl{border-bottom: 1px solid #ccc;padding:12px 0;overflow: hidden}
+.content .question ul li .a.skill li dl:last-child,.content .question ul li .a.portfolio li dl:last-child{border: none}
+
+.content .question ul li .a.skill li dt{float: left;width:27%;line-height: 1.5em;font-weight: 500;padding-left: 3%}
+
+.content .question ul li .a.skill li dt span{display: block;font-size: .9em;color:#999;font-weight: 400}
+.content .question ul li .a.skill li dd{line-height: 1.5em;font-size: .95em;margin-left: 27%}
+.content .question ul li .a.skill li dd .link{color:#6D8B74;font-size: .9em;transition: all .5s ease-out}
+.content .question ul li .a.skill li dd .link:hover{color:#bd0202}
+
+.content .question ul li .a.certificate li strong,.content .question ul li .a.certificate li span{text-align: center;width:20%}
+
+.content .question ul li .a.certificate li .wide{width:40%}
+.content .question ul li .a.certificate li .wide span{text-decoration: line-through}
+
+.content .question ul li .a.portfolio li dt{float: left;width:17%;line-height: 1.5em;font-weight: 500;margin-top: 20px;padding-left: 3%}
+.content .question ul li .a.portfolio li dt span{font-weight: 300;font-size: .8em;display: block;margin-top: 5px}
+.content .question ul li .a.portfolio li dd{float:left;width:56%;padding:0 2%;line-height: 2em}
+.content .question ul li .a.portfolio li dd .link{color:#6D8B74;font-size: .9em;transition: all .5s ease-out}
+.content .question ul li .a.portfolio li dd .link:hover{color:#bd0202}
+.content .question ul li .a.portfolio li dd:last-child{width:20%;padding:0;display: flex;justify-content: center}
+
+.content .question ul li .a.portfolio li dd:last-child img{object-fit: contain;width:60%;height:60%}
+.content .question ul li .a.portfolio li .mobile dd img{width:20%}
+
+.signBox{float: right;font-size: .9em;margin-right: 5%;padding:2% 0 3%;overflow: hidden}
+.signBox dd{font-size: 1.1em;padding:5% 10%;width: 50%;background: url(../img/sign.png) right center no-repeat;background-size: contain;float: right}
+.topMove{position:fixed;right:3%;bottom:5%;border-radius: 10px;background: #464F41;width:40px;height:40px;text-align:center;line-height:38px;color:#fff}
+
+
+@media screen and (max-width:1280px){
+    .info{padding: 3% 15%}
+    .content{padding:3% 10%}
+    .content .question .hgroup div{width:40%}
+    .content .question ul li .a.portfolio li dd:last-child img{object-fit: contain;width:80%;height:80%}
+    .content .question ul li .a.portfolio li .mobile dd img{width:30%}
+}
+
+/* 일반테블릿 */
+@media screen and (max-width:1024px){
+    .info{padding: 5% 15% 2%}
+    .info .myphoto{width:22%}
+
+    .info .infoBox{overflow: hidden;float: left;width:78%}
+    .info .myname{padding:0 0 3%}
+    .info .myname strong{letter-spacing:20px;font-size: 2em;font-weight: 500;text-align: left;display: block;width:160px;margin:0;padding-left: 5%}
+    .info .myname .nameBox{display: block;color:#D0C9C0;font-weight: 400;padding-left: 5%;}
+    .info .myname span{font-weight: 300;font-size: .7em;color:#ccc;text-align: center;margin:1% 0}
+    .info .myname span:last-child{padding-right:4.3%}
+
+    .info .txtBox{display: block;padding:2% 3%;background: #3f5243;margin: 0 auto;width:85%;font-size: .9em;border-radius: 10px;overflow: hidden}
+    .info .txtBox dl{border-right: none;padding:0 4%;float: left}
+    .info .txtBox dl:nth-child(1){width:42%;border-right: 2px solid #6D8B74;}
+    .info .txtBox dl:nth-child(2){width:38%;float: left;padding-left: 6%}
+    .info .txtBox dl:last-child{width:100%;border: none;clear: both;padding-top: 10px}
+    .content .question .hgroup div{width:50%}
+
+    .content .question ul li .a.skill li dt{width:20%}
+    
+}
+
+/* 소형테블릿 */
+@media screen and (max-width:768px){
+    .info{padding: 5% 8% 2%}
+    .info .txtBox{margin: 0 0 0 3%;width:90%}
+
+    .content{padding:3% 8%}
+
+    .content .question .hgroup div{width:60%}
+    .content .question ul li .a.experience li dd>span,.content .question ul li .a.education2 li dd>span{display: block;font-size: .8em;font-weight: 400;color:#333}
+    
+    .content .question ul li .a.portfolio li dd{width:76%}
+    .content .question ul li .a.portfolio li dd:last-child{display: none}
+    .content .question ul li .a.certificate li strong,.content .question ul li .a.certificate li span{text-align: center;width:30%}
+    .content .question ul li .a.certificate li strong:nth-child(1),.content .question ul li .a.certificate li span:nth-child(1){width:20%}
+
+    .content .question ul li .a.education li strong,.content .question ul li .a li p{width:35%}
+    .content .question ul li .a.education li strong:last-child,.content .question ul li .a li p:last-child{width:15%}
+
+    .signBox{font-size: .8em}
+}
+
+/* 모바일 */
+@media screen and (max-width:640px){
+    .info{padding: 15% 15% 20%}
+    .info{height:500px}
+    .info .myphoto{width:40%;float: none;margin: 0 auto}
+    .info .infoBox{overflow: hidden;float: none;width:100%}
+    .info .txtBox{margin: 0;width:100%;padding:4% 0}
+    .info .myname{padding:5% 0;text-align: center}
+    .info .myname strong{text-align: center;margin: 0 auto}
+    .info .myname .nameBox{font-size: 1.2em}
+
+    .info .txtBox dl{float: none;padding: 1% 0;font-size: 1.2em}
+    .info .txtBox dl:nth-child(1){width:92%;border:none;padding-left: 8%}
+    .info .txtBox dl:nth-child(2){width:92%;float: none;padding-left: 8%}
+    .info .txtBox dl:last-child{width:92%;border: none;clear: both;padding-top: 1%;padding-left: 8%}
+
+    .content .question .hgroup div{width:80%}
+    .content .question ul li .a.experience li dd,.content .question ul li .a.education2 li dd{display: block;font-size: 1.05em;font-weight: 400;color:#333}
+
+}
+
+/* 최소 사이즈 처리 */
+@media screen and (max-width:480px) {
+    #wrap {min-width:320px}
+
+    .info{padding: 15% 10% 25%}
+    .info .myphoto{width:48%;float: none;margin: 0 auto}
+    .content .question .hgroup div{padding:5px 8px;margin: 0 auto}
+    .content .question .hgroup .all{margin-bottom: 15px}
+    .content .question .hgroup div{width:95%;margin-top: 10px;font-size: 3.3vw}
+    .content .question ul li .a.experience li dd,.content .question ul li .a.education2 li dd{display: block;font-size: .9em;font-weight: 400;color:#333}
+
+    .content .question ul li .a.certificate li strong,.content .question ul li .a.certificate li span{text-align: center;width:30%;font-size: .9em}
+
+    .content .question ul li .a.education li{font-size: .7em}
+    .content .question ul li .a.education li span{display: block;text-align: center;width:70px;margin: 0 auto}
+    .content .question ul li .a.portfolio li, .content .question ul li .a.skill li{font-size: .78em}
+    .content .question ul li .q a{padding:1.5% 6%}
+    .content .question ul li .q{padding-right: 6%}
+    .content .question ul li .q span{line-height: 30px}
+
+    .signBox{font-size: 3vw}
+}
